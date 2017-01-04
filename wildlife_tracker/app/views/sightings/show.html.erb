@@ -2,12 +2,12 @@
 
 <p>
   <strong>Date:</strong>
-  <%= @sighting.date %>
+  <%= @sighting.date.strftime("%m/%d/%Y") %>
 </p>
 
 <p>
   <strong>Time:</strong>
-  <%= @sighting.time %>
+  <%= @sighting.time.strftime("%T") %>
 </p>
 
 <p>

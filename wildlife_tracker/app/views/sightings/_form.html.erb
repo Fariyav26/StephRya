@@ -31,6 +31,10 @@
     <%= f.label :animal_id %><br>
     <%= f.text_field :animal_id %>
   </div>
+  <div class="field">
+    <%= f.label :region_id %><br>
+    <%= select(:sighting, :region_id, @regions_for_select) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

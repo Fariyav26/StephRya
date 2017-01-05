@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :regions
+  resources :regions
   resources :sightings
   resources :animals
   # The priority is based upon order of creation: first created -> highest priority.

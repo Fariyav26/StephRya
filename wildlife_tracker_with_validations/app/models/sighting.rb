@@ -4,8 +4,7 @@ class Sighting < ActiveRecord::Base
 
   validates :animal, presence: true
   validates :region, presence: true
-  validates :user, presence: true
-  
+
   validates :date, presence: true
   validates :time, presence: true
 end

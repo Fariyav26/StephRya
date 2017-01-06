@@ -15,7 +15,8 @@
   <%= @animal.kingdom %>
 </p>
 
-<table id="sighting_list">
+<strong>Sighting(s):</strong>
+<table id="sighting_list" class="table">
   <thead>
     <tr>
       <th>Date</th>
@@ -37,7 +38,7 @@
     <% end %>
   </tbody>
 </table>
-</br>
+<hr>
 <strong>Add Sighting:</strong> </br>
 
   <div class="field">
@@ -206,7 +207,7 @@
   <label for="region_id">Region</label><br>
   <%= select(:sighting, :region_id, @regions_for_select) %>
   <input id="animal_id" type="hidden" name="animal[id]" value="<%= @animal.id %>" /><br><br>
-  <button id="create_sighting">Create Sighting</button>
+  <button id="create_sighting" class="btn btn-info btn-sm">Create Sighting</button>
 </br></br>
 
 

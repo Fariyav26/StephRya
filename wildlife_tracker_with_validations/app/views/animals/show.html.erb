@@ -15,5 +15,25 @@
   <%= @animal.kingdom %>
 </p>
 
+<table>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>Region</th>
+    </tr>
+  <% @sightings.each do |sighting| %>
+    <tr>
+      <td><%= sighting.date %></td>
+      <td><%= sighting.time %></td>
+      <td><%= sighting.longitude %></td>
+      <td><%= sighting.latitude %></td>
+      <td><%= sighting.region.name %></td>
+    </tr>
+  <% end %>
+</table>
+
+
 <%= link_to 'Edit', edit_animal_path(@animal) %> |
 <%= link_to 'Back', animals_path %>

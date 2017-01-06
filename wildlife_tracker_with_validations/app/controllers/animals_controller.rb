@@ -11,6 +11,9 @@ class AnimalsController < ApplicationController
   # GET /animals/1.json
   def show
     @sightings = @animal.sightings
+    @regions_for_select = Region.all.map do |region|
+      [region.name, region.id]
+    end
   end
 
   # GET /animals/new

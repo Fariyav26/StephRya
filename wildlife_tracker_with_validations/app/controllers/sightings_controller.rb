@@ -15,10 +15,16 @@ class SightingsController < ApplicationController
   # GET /sightings/new
   def new
     @sighting = Sighting.new
+    @regions_for_select = Region.all.map do |region|
+      [region.name, region.id]
+    end
   end
 
   # GET /sightings/1/edit
   def edit
+    @regions_for_select = Region.all.map do |region|
+      [region.name, region.id]
+    end
   end
 
   # POST /sightings
@@ -31,6 +37,9 @@ class SightingsController < ApplicationController
         format.html { redirect_to @sighting, notice: 'Sighting was successfully created.' }
         format.json { render :show, status: :created, location: @sighting }
       else
+        @regions_for_select = Region.all.map do |region|
+          [region.name, region.id]
+        end
         format.html { render :new }
         format.json { render json: @sighting.errors, status: :unprocessable_entity }
       end

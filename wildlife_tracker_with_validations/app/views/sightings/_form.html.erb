@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :region_id %><br>
-    <%= f.text_field :region_id %>
+    <%= select(:sighting, :region_id, @regions_for_select) %>
   </div>
   <div class="actions">
     <%= f.submit %>

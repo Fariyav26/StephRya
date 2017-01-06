@@ -1,8 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Animals</h1>
+<strong><lable>Common Name:</lable></strong><br>
+<input id="animal_common_name" type="text" name="animal[common_name]" placeholder="Common name" /><br>
+<strong><lable>Latin Name:</lable></strong><br>
+<input id="animal_latin_name" type="text" name="animal[latin_name]" placeholder="Latin name" /><br>
+<strong><lable>Kingdom:</lable></strong><br>
+<input id="animal_kingdom" type="text" name="animal[kingdom]" placeholder="Kingdom" /><br><br>
+<button id="create_animal">Create Animal</button><br>
 
-<table>
+
+<table id="animal_list">
   <thead>
     <tr>
       <th>Common name</th>

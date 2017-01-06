@@ -1,4 +1,34 @@
 $(document).ready(function(){
+  $("#create_animal").on("click", function(){
+    var common_name = $("#animal_common_name").val();
+    var latin_name = $("#animal_latin_name").val();
+    var kingdom = $("#animal_kingdom").val();
+
+    newAnimal = {
+      "animal": {
+        "common_name": common_name,
+        "latin_name": latin_name,
+        "kingdom": kingdom
+      }
+    }
+    $.ajax({
+      dataType: 'json',
+      url: '/animals',
+      method: 'POST',
+      data: newAnimal,
+      success: function(dataFromServer){
+        alert("recived message:" + JSON.stringify(dataFromServer));
+        $("#animal_list > tbody:last-child").append("<tr><td>" + dataFromServer.common_name + "</td>" + "<td>" + dataFromServer.latin_name + "</td>" + "<td>" + dataFromServer.kingdom + "</td>" +
+        "<td><a href='/animals/" + dataFromServer.id + "'>Show</a></td>" +
+        "<td><a href='/animals/" + dataFromServer.id + "/edit'>Edit</a></td>" +
+        "<td><a data-confirm='Are you sure?' rel='nofollow' data-method='delete' href='/animals/" + dataFromServer.id + "'>Destroy</a></td></tr>");
+      },
+      error: function(jqHXR, textStatus, errorThrown){
+        alert("add new animal failed:" + errorThrown);
+      }
+    });
+  });
+
   $("#create_sighting").on("click", function(){
     var year = $("#sighting_date_1i").val();
     var month = $("#sighting_date_2i").val();

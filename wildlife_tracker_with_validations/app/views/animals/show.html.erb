@@ -16,7 +16,7 @@
 </p>
 
 <table id="sighting_list">
-  <tbody>
+  <thead>
     <tr>
       <th>Date</th>
       <th>Time</th>
@@ -24,6 +24,8 @@
       <th>Latitude</th>
       <th>Region</th>
     </tr>
+  </thead>
+  <tbody>
     <% @sightings.each do |sighting| %>
       <tr>
         <td><%= sighting.date.strftime("%m/%d/%Y") %></td>

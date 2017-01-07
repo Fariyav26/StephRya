@@ -14,10 +14,26 @@
  *= require_self
  */
 body {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/52/Elephants_Kili_2.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background: url("deers.jpg");
+  background-size: inherit;
 }
 .table {
   background-color: rgba(255,255,255,0.35);
+}
+.background {
+  /*background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/52/Elephants_Kili_2.jpg");
+  background-size: cover;
+  margin: -10px auto 0px auto;
+  background-repeat: no-repeat;*/
+}
+
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body {
+      background: url("deers_vertical.jpg");
+      background-size: 100%;
+    }
 }

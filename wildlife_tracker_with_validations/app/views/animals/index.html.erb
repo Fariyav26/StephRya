@@ -23,7 +23,7 @@
   <tbody>
     <% @animals.each do |animal| %>
       <tr>
-        <td><%= animal.common_name %></td>
+        <td><%= link_to animal.common_name, animal %></td>
         <td><%= animal.latin_name %></td>
         <td><%= animal.kingdom %></td>
         <td><%= link_to 'Show', animal %></td>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Animal', new_animal_path %>
+<%= link_to 'New Animal', new_animal_path %> | <%= link_to 'Regions', regions_path %> | <%= link_to 'Sightings', sightings_path %>

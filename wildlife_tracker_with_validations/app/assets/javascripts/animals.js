@@ -19,7 +19,7 @@ $(document).ready(function(){
       success: function(dataFromServer){
         alert("recived message:" + JSON.stringify(dataFromServer));
         $("#animal_list > tbody:last-child").append("<tr><td>" + dataFromServer.common_name + "</td>" + "<td>" + dataFromServer.latin_name + "</td>" + "<td>" + dataFromServer.kingdom + "</td>" +
-        "<td><a href='/animals/" + dataFromServer.id + "'>Show</a></td>" +
+        // "<td><a href='/animals/" + dataFromServer.id + "'>Show</a></td>" +
         "<td><a href='/animals/" + dataFromServer.id + "/edit'>Edit</a></td>" +
         "<td><a data-confirm='Are you sure?' rel='nofollow' data-method='delete' href='/animals/" + dataFromServer.id + "'>Destroy</a></td></tr>");
       },
